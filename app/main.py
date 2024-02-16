@@ -39,7 +39,7 @@ if __name__ == "__main__":
     print('\n')
     print('---------- Gastos Admnistrativos: ----------')
     print(f'Tasacion (200-600 €): {valuation} €')
-    print(f'Notaria (0.2 - 0.5 %): {notary} €')
+    print(f'Notaria (0.5 - 1 %): {notary} €')
     print(f'Registro de la propiedad (0.1 - 0.25 %): {int(constants.REGISTRY * price)} €')
     print(f'Gestoria: {administrator} €')
     print(f'*****Total en gastos administrativos: {total_expenses} €****')
