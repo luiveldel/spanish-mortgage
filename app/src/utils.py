@@ -16,21 +16,21 @@ def govmnt_taxes(hand:int, reduced: bool) -> float:
             itp = 0.06
             return itp
 
-def interest_simple(principal: float, time: int, rate):
+def get_amortization(principal: float, years: int, apr: float):
     """
     Calculate compound interest.
 
     Args:
-    principal (float): The initial amount of money.
-    rate (float): The annual interest rate (in percentage).
-    time (int): The time the money is invested for (in years).
+    principal (float): The initial amount of money. 240000 loan amount
+    apr (float): The annual percentage rate (in percentage). 0.05 loan interest rate
+    term (int): The time the money is invested for (in years). 30 * 12 loan term in months
 
     Returns:
     float: The total amount after compound interest.
     """
+
+    monthly_rate = apr / 12
+    term = years * 12 
+    payment = (monthly_rate * principal) / (1-(1+monthly_rate)**(-term))
     
-    if rate > 1:
-        rate = rate / 100
-    amount = principal * (1 + rate_decimal)**time
-    
-    return amount
+    return payment
