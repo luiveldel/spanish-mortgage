@@ -2,19 +2,19 @@
 def govmnt_taxes(hand:int, reduced: bool) -> float:
     iva = 0.1
     if reduced:
+        ajd = 0.003
         if hand == 1:
-            ajd = 0.003
             return ajd + iva
         else:
             itp = 0.035
-            return itp
+            return ajd + itp
     else:
+        ajd = 0.012
         if hand == 1:
-            ajd = 0.01
             return ajd + iva
         else:
             itp = 0.06
-            return itp
+            return ajd + itp
 
 def get_amortization(principal: float, years: int, apr: float):
     """
